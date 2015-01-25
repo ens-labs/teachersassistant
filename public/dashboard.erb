@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Teacher Assistant</title>
 
-    <link href=<%=url("/bootstrap.min.css")%> rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href=<%=url("/stylesheet.css")%>
+    <link href=<%=url("/views/css/style.css")%> rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href=<%=url("/views/css/style.css")%>
 
 
   </head>
@@ -46,7 +46,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Settings <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="/auth/logout">Log Out</a></li>
+            <li><a href="#">Log Out</a></li>
           </ul>
         </li>
       </ul>
@@ -82,11 +82,10 @@
                 </tr>
               </thead>
               <tbody>
-              	<% @students.each do |student| %>
                 <tr>
-                  <td><%= student.id%></td>
-                  <td><%= student.name + ' ' + student.last_name%></td>
-                  <td><%= student.grade_group%></td>
+                  <td>1</td>
+                  <td>Bryan Cruz</td>
+                  <td>12 / 2</td>
                   <td>
                     <button type="button" class="btn btn-primary btn-default btn-present">
                     Present
@@ -96,18 +95,90 @@
                     </button>
                   </td>
                 </tr>
-                <% end %>
+                <tr>
+                    <td>2</td>
+                    <td>Bh Cruz</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>yolo Cruz</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>swag Cruz</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>sweg Cruz</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>noswag hackathon :(</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                </tr>
               </tbody>
             </table>
         </div>
+
       </div>
+
+
+
     </div>
+
+
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src=<%= url("/bootstrap.min.js")%>></script>
+    <script src=<%= url("/views/js/bootstrap.min.js")%>></script>
 
     <script type="text/javascript">
       var countries= document.getElementById("countries").getContextt("2d");
@@ -134,3 +205,35 @@
 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>All students</h1>
+
+<ul>
+ <% @students.each do |student| %>
+  <li>
+  <%= student.name + ' ' + student.last_name%>
+  </li>
+ <% end %>
+</ul>
