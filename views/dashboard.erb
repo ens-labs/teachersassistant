@@ -53,11 +53,9 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-
   <body>
     
+    <div class="container">
     <div class="row">
       <div class="col-xs-4 ">
         <div class="panel panel-primary" style="height: 500px; max-height:100% ; margin-left: 30px; margin-right: 10px;">
@@ -102,7 +100,45 @@
         </div>
       </div>
     </div>
+	</div>
 
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8"></div>
+
+			<div class="col-xs-4">
+				<div class="panel panel-default">
+	            <table class="table tbl-scr" style="height: 100px;">
+	              <thead >
+	                <tr>
+	                  <th>#</th>
+	                  <th>Name</th>
+	                  <th>Grade - Group</th>
+	                  <th>Present or absent</th>
+	                </tr>
+	              </thead>
+	              <tbody>
+	              	<% @students.each do |student| %>
+	                <tr>
+	                  <td><%= student.id%></td>
+	                  <td><%= student.name + ' ' + student.last_name%></td>
+	                  <td><%= student.grade_group%></td>
+	                  <td>
+	                    <button type="button" class="btn btn-primary btn-default btn-present">
+	                    Present
+	                    </button>
+	                    <button type="button" class= "btn btn-primary btn-abs">
+	                      Absent
+	                    </button>
+	                  </td>
+	                </tr>
+	                <% end %>
+	              </tbody>
+	            </table>
+	        </div>
+			</div>
+		</div>
+	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -130,7 +166,5 @@
 
 
     </script>
-
-
   </body>
 </html>
