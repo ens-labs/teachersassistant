@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teacher Assistant</title>
+
+    <link href=<%=url("/views/css/style.css")%> rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href=<%=url("/views/css/style.css")%>
+
+
+  </head>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Teacher Assistant</a>
+    </div>
+
+   
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Clases <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">12-1</a></li>
+            <li><a href="#">12-2</a></li>
+            <li><a href="#">12-3</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Remove a class</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Add a class</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Settings <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Log Out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+  <body>
+    
+    <div class="row">
+      <div class="col-xs-4 ">
+        <div class="panel panel-primary" style="height: 500px; max-height:100% ; margin-left: 30px; margin-right: 10px;">
+          <div class="panel-heading"> Group Statistics</div>
+          <div class="panel-body">
+            <canvas id="countries" width="600" height="400"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-8">
+        
+        <div class="col-xs-12" style="">
+          <div class="panel panel-default">
+            <table class="table tbl-scr" style="height: 100px;">
+              <thead >
+                <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Grade - Group</th>
+                  <th>Present or absent</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Bryan Cruz</td>
+                  <td>12 / 2</td>
+                  <td>
+                    <button type="button" class="btn btn-primary btn-default btn-present">
+                    Present
+                    </button>
+                    <button type="button" class= "btn btn-primary btn-abs">
+                      Absent
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bh Cruz</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>yolo Cruz</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>swag Cruz</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>sweg Cruz</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>noswag hackathon :(</td>
+                    <td>12 / 2</td>
+                    <td>
+                      <button type="button" class="btn btn-primary btn-default btn-present">
+                      Present
+                      </button>
+                      <button type="button" class= "btn btn-primary btn-abs">
+                        Absent
+                      </button>
+                    </td>
+                  </tr>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src=<%= url("/views/js/bootstrap.min.js")%>></script>
+
+    <script type="text/javascript">
+      var countries= document.getElementById("countries").getContextt("2d");
+      new Chart(countries).Pie(pieData, pieOptions);
+
+      var pieData = [
+        {
+          value: 70,
+          color : "#4878BB6"
+        },
+        {
+          value : 30,
+          color: "#4ACAB4"
+        }
+      ]
+      var pieOptions = {
+        segmentShowStroke :false,
+        animateScale : true
+      }
+
+
+    </script>
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>All students</h1>
+
+<ul>
+ <% @students.each do |student| %>
+  <li>
+  <%= student.name + ' ' + student.last_name%>
+  </li>
+ <% end %>
+</ul>

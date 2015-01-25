@@ -1,0 +1,21 @@
+.btn-abs{
+	background: #FF0000;
+	max-width: 50%;
+
+
+}
+.btn-present{
+	background: #009933;
+	max-width: 50%;
+}
+
+.tbl-scr{
+	overflow-y: visible;
+
+}
+
+html{
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
