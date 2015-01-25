@@ -30,14 +30,15 @@
   		<div class="col-md-6">
   			<div class="panel panel-default">
 	  			<div class="panel-body">
-	  				<button type="button" class="btn btn-large"> Parents enter Here</button>
+	  				<button type="button" style="" class="btn btn-large"> Parents enter Here</button>
 	  			</div>
   			</div>
   		</div>
 
-  		<form form action="/auth/login" method="post">
-  			<div class="panel panel-default">
-	  			<div class="panel-body">
+  		<div class="col-md-6">
+			<div class="panel panel-default">
+  			<div class="panel-body">
+  				<form form action="/auth/login" method="post">
 		  			<div class="form-group">
 		  				<input type="text" placeholder="username" name="user[username]">
 		  			</div>
@@ -45,7 +46,8 @@
 				    <input type="password" placeholder="password" name="user[password]"/>
 				    <input type="submit" value="Log In"/>
 				  	</div>
-			  	</div>
+			  	</form>
 		  	</div>
-  		</form>
+	  	</div>
+  		</div>
   	</div>
