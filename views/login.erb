@@ -1,5 +1,51 @@
-<form action="/auth/login" method="post">
-  <p>Username: <input type="text" name="user[username]" /></p>
-  <p>Password: <input type="password" name="user[password]" /></p>
-  <input type="submit" value="Log In" />
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teacher Assistant</title>
+
+    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+  </head>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only white">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand white" href="#">Teacher Assistant</a>
+    </div>
+</nav>
+
+  <body>
+  	<div class="row">
+
+  		<div class="col-md-6">
+  			<div class="panel panel-default">
+	  			<div class="panel-body">
+	  				<button type="button" class="btn btn-large"> Parents enter Here</button>
+	  			</div>
+  			</div>
+  		</div>
+
+  		<form form action="/auth/login" method="post">
+  			<div class="panel panel-default">
+	  			<div class="panel-body">
+		  			<div class="form-group">
+		  				<input type="text" placeholder="username" name="user[username]">
+		  			</div>
+		  			<div class="form-group">
+				    <input type="password" placeholder="password" name="user[password]"/>
+				    <input type="submit" value="Log In"/>
+				  	</div>
+			  	</div>
+		  	</div>
+  		</form>
+  	</div>
