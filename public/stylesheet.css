@@ -20,10 +20,17 @@ html{
 }
 
 .navbar-default, .navbar-collapse, .navbar-form{
-	background-color: #2196F3; !important
+	background-color: #2196F3;`
 
 }
 
 .white{
 	color: #fff !important;
+}
+
+.btn-parents{
+	text-align: center;
+	width: 100%;
+	background-color: #2196F3 !important;
+
 }
