@@ -8,6 +8,9 @@ class User
 
   property :id, Serial, key: true
   property :username, String, length: 128
+  property :name, String, length: 128
+  property :last_name, String, length: 128
+  property :school, String, length: 128
 
   property :password, BCryptHash
 
@@ -35,5 +38,5 @@ end
 # Tell DataMapper the models are done being defined
 DataMapper.finalize
 
-# Update the database to match the properties of User.
+# Update the database to match the properties of the models.
 DataMapper.auto_upgrade!

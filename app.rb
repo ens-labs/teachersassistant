@@ -6,7 +6,6 @@ require './model'
 require './controller'
 
 class SinatraWardenExample < Sinatra::Base
-  scontroller = StudentController.new()
   enable :sessions
   register Sinatra::Flash
 
@@ -60,7 +59,7 @@ class SinatraWardenExample < Sinatra::Base
 
   get '/dashboard' do
     env['warden'].authenticate!
-    @students = Student.all
+    @students = StudentController.new.show()
     erb :dashboard  
   end
 
@@ -69,7 +68,7 @@ class SinatraWardenExample < Sinatra::Base
     last_name = params[:last_name]
     grade_group = params[:grade_group]
 
-    scontroller.create(name, last_name, grade_group)
+    StudentController.new.create(name, last_name, grade_group)
     redirect '/dashboard'
   end
 
@@ -79,6 +78,15 @@ class SinatraWardenExample < Sinatra::Base
 
   get '/auth/login' do
     erb :login
+  end
+
+  get '/auth/signup' do
+    erb :signup
+  end
+
+  post '/auth/create_signup' do
+    UserController.new.signup(params[:name], params[:last_name], params[:school], params[:username], params[:password])
+    redirect '/auth/login'
   end
 
   post '/auth/login' do
