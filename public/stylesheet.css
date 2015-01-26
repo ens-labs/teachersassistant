@@ -14,9 +14,13 @@
 
 }
 
-html{
+body{
 	overflow-x: hidden;
-	overflow-y: hidden;
+}
+
+h1{
+    font-family: 'Roboto', sans-serif;
+	margin-bottom: -364px;
 }
 
 .navbar-default, .navbar-collapse, .navbar-form{
@@ -33,6 +37,12 @@ html{
 	width: 100%;
 	background-color: #2196F3 !important;
 
+}
+
+.btn-center{
+	text-align: center;
+	color: #fff !important;
+	padding-bottom: 28px;
 }
 
 .panel-primary>.panel-heading {
