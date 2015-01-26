@@ -64,6 +64,15 @@ class SinatraWardenExample < Sinatra::Base
     erb :dashboard  
   end
 
+  post '/create_student' do
+    name = params[:name]
+    last_name = params[:last_name]
+    grade_group = params[:grade_group]
+
+    scontroller.create(name, last_name, grade_group)
+    redirect '/dashboard'
+  end
+
   get '/parents' do
     erb :parents
   end

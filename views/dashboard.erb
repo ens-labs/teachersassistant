@@ -7,7 +7,8 @@
     <title>Teacher Assistant</title>
 
     <link href=<%=url("/bootstrap.min.css")%> rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href=<%=url("/stylesheet.css")%>
+    <link rel="stylesheet" type="text/css" href=<%=url("/stylesheet.css")%>>
+    <script src=<%=url("/Chart.js")%>></script>
 
 
   </head>
@@ -57,20 +58,39 @@
     
     <div class="container">
     <div class="row">
-      <div class="col-xs-4 ">
+      <div class="col-xs-4">
+      	<div class="col-xs-12">
         <div class="panel panel-primary" style="height: 500px; max-height:100% ; margin-left: 30px; margin-right: 10px;">
           <div class="panel-heading"> Group Statistics</div>
-          <div class="panel-body">
-            <canvas id="countries" width="600" height="400"></canvas>
+          <div class="panel-body row-centered">
+           <div class="col-xs-3">
+					<canvas id="javascript" height="130" width="130"></canvas>
+					<p>12</p>
+					<br>
+					<script>
+						var doughnutData = [
+								{
+									value: 90,
+									color:"#21AED3"
+								},
+								{
+									value : 5,
+									color : "#3c3c3c"
+								}
+							];
+							var myDoughnut = new Chart(document.getElementById("javascript").getContext("2d")).Doughnut(doughnutData);
+					</script>
+			</div>
           </div>
+        </div>
         </div>
       </div>
 
       <div class="col-xs-8">
         
-        <div class="col-xs-12" style="">
+        <div class="col-xs-12" style="max-height: 400px;">
           <div class="panel panel-default">
-            <table class="table tbl-scr" style="height: 100px;">
+            <table class="table tbl-scr" style="overflow: scroll;">
               <thead >
                 <tr>
                   <th>#</th>
@@ -104,35 +124,28 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-8"></div>
-
-			<div class="col-xs-4">
+			<div class="col-xs-12">
 				<div class="panel panel-default">
 	            <table class="table tbl-scr" style="height: 100px;">
 	              <thead >
 	                <tr>
-	                  <th>#</th>
 	                  <th>Name</th>
-	                  <th>Grade - Group</th>
-	                  <th>Present or absent</th>
+	                  <th>Last Name</th>
+	                  <th>Group - Grade</th>
+	                  <th>Add</th>
 	                </tr>
 	              </thead>
 	              <tbody>
-	              	<% @students.each do |student| %>
 	                <tr>
-	                  <td><%= student.id%></td>
-	                  <td><%= student.name + ' ' + student.last_name%></td>
-	                  <td><%= student.grade_group%></td>
+	                	<form action="/create_student" method="post">
+	                  <td><input name="name" placeholder="name"/></td>
+	                  <td><input name="last_name" placeholder="last name"/></td>
+	                  <td><input name="grade_group" placeholder="grade - group"/></td>
 	                  <td>
-	                    <button type="button" class="btn btn-primary btn-default btn-present">
-	                    Present
-	                    </button>
-	                    <button type="button" class= "btn btn-primary btn-abs">
-	                      Absent
-	                    </button>
+	                    <button type="submit" class= "btn btn-primary btn-abs">Save</button>
 	                  </td>
+	                  </form>
 	                </tr>
-	                <% end %>
 	              </tbody>
 	            </table>
 	        </div>
@@ -144,27 +157,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src=<%= url("/bootstrap.min.js")%>></script>
-
-    <script type="text/javascript">
-      var countries= document.getElementById("countries").getContextt("2d");
-      new Chart(countries).Pie(pieData, pieOptions);
-
-      var pieData = [
-        {
-          value: 70,
-          color : "#4878BB6"
-        },
-        {
-          value : 30,
-          color: "#4ACAB4"
-        }
-      ]
-      var pieOptions = {
-        segmentShowStroke :false,
-        animateScale : true
-      }
-
-
-    </script>
   </body>
 </html>
