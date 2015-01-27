@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Teacher Assistant</title>
 
-    <link href="/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/stylesheet.css">
   </head>
 
@@ -21,29 +21,29 @@
 
   <body>
   	<div class="row">
-
-  		<div class="col-md-6">
+      <div class="col-md-1"></div>
+  		<div class="col-md-5">
   			<div class="panel panel-default" style="height: 250px;">
             <div class="panel-body">
             <div class="col-md-12">
-              <div class="panel panel-default">
-                <div class="panel-body">
-                 <h2>Parents See Son or Daughter Information</h2>
+              <div class="panel panel-default" style="border-color: #fff;" >
+                <div class="panel-body" >
+                 <h2 class="text-center">Parents: See your Child's Assistance Information</h2>
                 </div>
               </div>
             </div>
-	  				<button type="button" style="color: #fff;" class="btn btn-large btn-parents test-center"> Parents enter Here</button>
+	  				<button type="button" style="color: #fff;" class="btn btn-lg btn-parents test-center"> Parents Click Here</button>
 	  			</div>
   			</div>
   		</div>
 
-  		<div class="col-md-6">
+  		<div class="col-md-5">
 			<div class="panel panel-default" style="height: 60%;">
   			<div class="panel-body">
           <div class="col-md-12">
             <div class="panel panel-default">
               <div class="panel-body">
-               <h2>Teachers can log in here</h2>
+               <h2 class="text-center">Teachers: Log in here</h2>
               </div>
             </div>
           </div>
@@ -58,7 +58,14 @@
                   <input type="password" placeholder="password" name="user[password]"/>
                   </br>
                   </br>
-                  <button type="submit">Log in</button> <a href="/auth/signup">Sign up here</a>
+                  <button type="submit" class="btn btn-primary btn-md col-xs-5 pull-left">
+                    <h5>Log in</h5>
+                  </button> 
+                  <a href="/auth/signup">
+                    <button type="button" class="btn btn-md btn-primary col-xs-5 pull-right" style="vertical-align: center" >
+                      <h5>Sign up here</h5>
+                    </button>
+                  </a>
                   </div>
                 </form>
               </div>
