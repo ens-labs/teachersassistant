@@ -4,6 +4,8 @@
 
 
 }
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
 .btn-present{
 	background: #03A9F4;
 	max-width: 50%;
@@ -18,10 +20,6 @@ body{
 	overflow-x: hidden;
 }
 
-h1{
-    font-family: 'Roboto', sans-serif;
-	margin-bottom: -364px;
-}
 
 .navbar-default, .navbar-collapse, .navbar-form{
 	background-color: #2196F3;`
@@ -42,7 +40,6 @@ h1{
 .btn-center{
 	text-align: center;
 	color: #fff !important;
-	padding-bottom: 28px;
 }
 
 .panel-primary>.panel-heading {
