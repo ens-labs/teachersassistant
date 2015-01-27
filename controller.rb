@@ -16,7 +16,8 @@ end
 
 class UserController
 	def signup(name, last_name, school, username, password)
-		@user = User.new(:name => "#{name}", :last_name => "#{last_name}", :school => "#{school}", :username => "#{username}", :password => "#{password}")
+		@pwd = password.split("").join
+		@user = User.new(:name => "#{name}", :last_name => "#{last_name}", :school => "#{school}", :username => "#{username}", :password => @pwd)
 		@user.save!
 	end
 end

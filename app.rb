@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-# load the Database and User model
+# load the Database and models
 require './model'
 require './controller'
 
@@ -77,7 +77,11 @@ class SinatraWardenExample < Sinatra::Base
   end
 
   get '/auth/login' do
-    erb :login
+    if session[:return_to].nil?
+      redirect '/dashboard'
+    else
+      erb :login
+    end
   end
 
   get '/auth/signup' do
@@ -89,7 +93,7 @@ class SinatraWardenExample < Sinatra::Base
     redirect '/auth/login'
   end
 
-  post '/auth/login' do
+  post '/auth/logining' do
     env['warden'].authenticate!
 
     flash[:success] = env['warden'].message
@@ -114,11 +118,5 @@ class SinatraWardenExample < Sinatra::Base
     puts env['warden']
     flash[:error] = env['warden'].message || "You must log in"
     redirect '/auth/login'
-  end
-
-  get '/protected' do
-    env['warden'].authenticate!
-
-    erb :protected
   end
 end
