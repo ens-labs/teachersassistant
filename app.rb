@@ -115,10 +115,4 @@ class SinatraWardenExample < Sinatra::Base
     flash[:error] = env['warden'].message || "You must log in"
     redirect '/auth/login'
   end
-
-  get '/protected' do
-    env['warden'].authenticate!
-
-    erb :protected
-  end
 end
