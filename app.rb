@@ -1,8 +1,7 @@
 require 'bundler'
 Bundler.require
 
-# load the Database and models
-require './model'
+# load the the controller which loads the models
 require './controller'
 
 class SinatraWardenExample < Sinatra::Base
@@ -63,13 +62,14 @@ class SinatraWardenExample < Sinatra::Base
     erb :dashboard  
   end
 
+
+  #Need to make this async and fix it.
   post '/create_student' do
     name = params[:name]
     last_name = params[:last_name]
     grade_group = params[:grade_group]
 
     StudentController.new.create(name, last_name, grade_group)
-    redirect '/dashboard'
   end
 
   get '/parents' do
