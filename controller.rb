@@ -5,14 +5,14 @@ require './model'
 
 class StudentController
 	def create(name, last_name, grade_group)
-		if name == nil
+		if name.nil?
 			#handle the exceptions
 			puts "name is nil"
-		elsif last_name == nil
+		elsif last_name.nil?
 			puts "last_name is nil"
-		elsif grade_group == nil
+		elsif grade_group.nil?
 			puts "grade_group is nil"
-		elsif name == nil && last_name == nil && grade_group == nil
+		elsif name.nil? && last_name.nil? && grade_group.nil?
 			puts "Idk what happened"
 		else
 			@student = Student.new(:name => "#{name}", :last_name => "#{last_name}", :grade_group => "#{grade_group}")
